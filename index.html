@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <!-- Meta tags for proper character encoding and responsiveness -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page Title -->
+  <title> MTN IPTV App </title>
+
+  <!-- Open Graph Meta Tags for link preview -->
+  <meta property="og:title" content="MTN IPTV App" />
+  <meta property="og:description" content="تمتع بمتابعة مسلسلاتك التلفزيونية والأفلام والمباريات الرياضية مع مجموعة كبيرة من القنوات التلفزيونية العربية والعالمية بالإضافة للكثير من الفيديوهات بدقة عالية جداً." />
+    
+  <!-- Important: Full URL to the image for preview -->
+  <meta property="og:image" content="https://res.cloudinary.com/dpdeknzho/image/upload/v1728570722/IMG_20241010_173113_519_iydavb.jpg" />
+    
+  <!-- Optional but recommended: specify image dimensions -->
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- The actual URL of the page being shared -->
+  <meta property="og:url" content="https://res.cloudinary.com/dpdeknzho/image/upload/v1728570722/IMG_20241010_173113_519_iydavb.jpg" />
+    
+  <!-- Website type -->
+  <meta property="og:type" content="website" />
+
+  <!-- Optional: Name of the website or app -->
+  <meta property="og:site_name" content="MTN SYR" />
+
+  <!-- Optional: Twitter Card tags if you'd like a Twitter-specific preview -->
+  <meta name="twitter:card" content="large_image">
+  <meta name="twitter:title" content="MTN IPTV App">
+  <meta name="twitter:description" content="تمتع بمتابعة مسلسلاتك التلفزيونية والأفلام والمباريات الرياضية مع مجموعة كبيرة من القنوات التلفزيونية العربية والعالمية بالإضافة للكثير من الفيديوهات بدقة عالية جداً.">
+  <meta name="twitter:image" content="https://res.cloudinary.com/dpdeknzho/image/upload/v1728570722/IMG_20241010_173113_519_iydavb.jpg">
+    
+  <!-- reCAPTCHA v3 client script (replace YOUR_SITE_KEY) -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lez18QrAAAAAHRVudPm3hSQZMkAlFN-2ilGylQP"></script>
+  <!-- Minimal CSS -->
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        header img {
+            height: 50px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            flex: 1;
+            text-align: center;
+        }
+        .lang-select {
+            font-size: 1em;
+            padding: 5px;
+        }
+        .app-title {
+            margin: 20px 0 10px;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        .app-image {
+            max-width: 80%;   /* instead of fixed 200px */
+            height: auto;
+            margin: 10px auto;
+            display: block;
+        }
+        .lang-text {
+            display: none;
+            max-width: 90%;   /* instead of 700px */
+            word-wrap: break-word;
+            margin: 20px auto;
+            text-align: left;
+            line-height: 1.5em;
+        }
+        .lang-text[dir="rtl"] {
+            text-align: right;
+        }
+
+        .lang-text.active {
+            display: block;
+        }
+        #status {
+            margin-top: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #333;
+        }
+  </style>
+</head>
+<body>
+   <!-- Header -->
+    <header>
+        <img src="https://res.cloudinary.com/dlfmnem2s/image/upload/v1758022307/IMG_20250916_143135_042_gjttbs.png" alt="MTN Logo">
+        <h1>MTN SYR</h1>
+        <select class="lang-select" id="langSelect">
+            <option value="ar">العربية</option>
+            <option value="en">English</option>
+        </select>
+    </header>
+
+    <!-- App Title -->
+    <div class="app-title">MTN IPTV app</div>
+
+    <!-- App Image -->
+    <img class="app-image" src="https://imtn.mtnsyr.com:16060/customerCare/static/Application/17048023884909609.jpg" alt="App Image">
+
+    <!-- Language Texts -->
+    <div id="enText" class="lang-text ">
+        <p>
+          It is a digital television viewing service via Internet Protocol.<br>Subscribers of MTN ADSL will be able to benefit from the MTN IPTV service on the television screen only currently through the ADSL line.<br>The service mainly includes: live broadcast channels, movies, series, music, Quran, YouTube.
+        </p>
+    </div>
+
+    <div id="arText" class="lang-text active" dir="rtl">
+        <p>
+          هي خدمة مشاهدة التلفزيون الرقمي عبر برتوكول الانترنت.<br>
+حيث سيتمكن مشتركي MTN ADSL من الاستفادة من خدمة MTN IPTV على شاشة التلفزيون فقط حاليا عن طريق خط الـ ADSL.<br>
+تحتوي الخدمة بشكل أساسي : قنوات بث مباشر ، أفلام ، مسلسلات ، موسيقى ، قرآن ، يوتيوب .<br>
+        </p>
+    </div>
+    <p id="status">Preparing download…</p>
+
+  <script>
+     // Language Switcher
+        const langSelect = document.getElementById('langSelect');
+        const enText = document.getElementById('enText');
+        const arText = document.getElementById('arText');
+
+        langSelect.addEventListener('change', () => {
+            if (langSelect.value === 'en') {
+                enText.classList.add('active');
+                arText.classList.remove('active');
+            } else {
+                arText.classList.add('active');
+                enText.classList.remove('active');
+            }
+        });
+    
+    const SITE_KEY = '6Lez18QrAAAAAHRVudPm3hSQZMkAlFN-2ilGylQP'; // <--- put your site key here
+    const WORKER_URL = 'https://recabachav3.digitalservices-mtn.workers.dev/'; // <--- change to your Worker URL
+    const DOWNLOAD_URL = 'https://devdigitalmtn.github.io/MTN-IPTV/assets/stb_mtntv_v1.3.4.apk'
+
+    const statusEl = document.getElementById('status');
+    function setStatus(t){ statusEl.textContent = t; }
+
+    grecaptcha.ready(() => {
+      setStatus('Running security check...');
+      // action 'download' is an arbitrary label — we'll expect the same on server
+      grecaptcha.execute(SITE_KEY, { action: 'download' }).then(token => {
+        // send token to Cloudflare Worker for server-side verification
+        fetch(WORKER_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token, action: 'download' })
+        })
+        .then(r => r.json())
+        .then(json => {
+          if (json.success) {
+            setStatus('Verified ✓ Redirecting to download...');
+            // short delay to show message then redirect
+            setTimeout(() => window.location.href = DOWNLOAD_URL, 300);
+          } else {
+            console.warn('reCAPTCHA failed', json);
+            setStatus('Verification failed. Try again later.');
+            // optionally show a manual link or retry button
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          setStatus('Network or server error during verification.');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
